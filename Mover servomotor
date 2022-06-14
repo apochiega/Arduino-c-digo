@@ -1,0 +1,15 @@
+#include <Servo.h>
+Servo prueba; 
+void setup() {
+  prueba.attach(3 );  
+
+}
+
+void loop() {
+ prueba.write(0);  //
+ delay(2000); 
+ prueba.write(90);
+ delay(2000); 
+ prueba.write(180);
+ delay(2000); 
+}
