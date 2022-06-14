@@ -1,0 +1,36 @@
+
+
+int rojo=11;  
+int amarillo=3; 
+int verde=6; 
+
+int temporizador;
+
+
+
+void setup() { 
+pinMode(verde,OUTPUT);  
+pinMode(amarillo,OUTPUT); 
+pinMode(rojo,OUTPUT); 
+} 
+
+
+void loop() { 
+temporizador=(analogRead (A0));
+digitalWrite(verde,HIGH); 
+delay(temporizador);  
+digitalWrite(verde,LOW);  
+delay(temporizador);  
+
+
+digitalWrite(amarillo,HIGH);  
+delay(temporizador);  
+digitalWrite(amarillo,LOW);  
+delay(temporizador);  
+
+
+digitalWrite(rojo,HIGH); 
+delay(temporizador);  
+digitalWrite(rojo,LOW); 
+delay(temporizador); 
+}
