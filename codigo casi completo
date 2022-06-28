@@ -3,12 +3,13 @@
 #include "Wire.h"
 #include "Adafruit_TCS34725.h"
 
-const int redPos = 160;
-const int orangePos = 130;
-const int yellowPos = 100;
-const int greenPos = 70;
-const int bluePos = 30;
-const int nonePos = 0; 
+const int rojo = 160;
+const int amarillo = 140;
+const int celeste = 120;
+const int verdes = 100;
+const int blancos = 80;
+const int gris = 60; 
+const int negro =40;
  Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_1X);
 Servo prueba;
 Servo myservo; 
@@ -57,36 +58,44 @@ void loop() {
  b = blue/average;
  
 
- Serial.print("\tClear:"); Serial.print(clearcol);
- Serial.print("\tRed:"); Serial.print(r);
- Serial.print("\tGreen:"); Serial.print(g);
- Serial.print("\tBlue:"); Serial.print(b);
+ Serial.print("\tClear: "); Serial.print(clearcol);
+ Serial.print(" Rojo: "); Serial.print(r);
+ Serial.print(" Verde: "); Serial.print(g);
+ Serial.print(" Azul: "); Serial.print(b);
  
  
- if ((r > 1.4) && (g < 0.9) && (b < 0.9)) {
- Serial.print("\tROT");
- myservo.write(redPos);
+ if ((r > 1.8) && (g < 0.6) && (b < 0.6)) {
+ Serial.print(" Rojo");
+ myservo.write(rojo);
  }
- else if ((r < 0.95) && (g > 1.4) && (b < 0.9)) {
- Serial.print("\tGRUEN");
- myservo.write(greenPos);
+ else if ((r < 0.13) && (g > 1.0) && (b < 0.8)) {
+ Serial.print(" Verde");
+ myservo.write(verdes);
  }
- else if ((r < 0.8) && (g < 1.2) && (b > 1.2)) {
- Serial.print("\tBLAU");
- myservo.write(bluePos);
+ else if ((r < 1.05) && (g < 1.2) && (b > 0.9)) {
+ Serial.print(" Celeste");
+ myservo.write(celeste);
  }
  
- else if ((r > 1.15) && (g > 1.15) && (b < 0.7)) {
- Serial.print("\tGELB");
- myservo.write(yellowPos);
+ else if ((r > 1.4) && (g > 1.0) && (b < 0.7)) {
+ Serial.print(" Amarillo");
+ myservo.write(amarillo);
  }
  else if ((r > 1.4) && (g < 1.0) && (b < 0.7)) {
- Serial.print("\tORANGE");
- myservo.write(orangePos);
+ Serial.print(" Gris");
+ myservo.write(gris);
+ } 
+ else if ((r > 1.4) && (g < 1.0) && (b < 0.7)) {
+ Serial.print(" Blanco");
+ myservo.write(blancos);
+ } 
+ else if ((r > 1.3) && (g < 1.1) && (b < 0.7)) {
+ Serial.print(" Negro");
+ myservo.write(negro);
  } 
  
  else {
- Serial.print("\tNICHT ERKANNT"); 
+ Serial.print("Nada"); 
  
  }
  
