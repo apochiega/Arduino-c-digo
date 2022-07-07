@@ -1,30 +1,4 @@
-//
-#include "Servo.h"
-#include "Wire.h"
-#include "Adafruit_TCS34725.h"
-
-const int rojo = 160;
-const int amarillo = 140;
-const int celeste = 120;
-const int verdes = 100;
-const int blancos = 80;
-const int gris = 60; 
-const int negro =40;
- Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_1X);
-Servo prueba;
-Servo myservo; 
-void setup() {
-  prueba.attach(6 );  
-Serial.begin(9600);
- Serial.println("Makerblog.at - MuMs Color Sensor");
- 
- 
- if (tcs.begin()) {
-
- Serial.println("Sensor gefunden");
- } else {
- 
- Serial.println("TCS34725 nicht gefunden ... Ablauf gestoppt!");
+Serial.println("TCS34725 nicht gefunden ... Ablauf gestoppt!");
  while (1); 
  } 
  
@@ -38,7 +12,7 @@ Serial.begin(9600);
 void loop() {
  prueba.write(0);  //
  delay(2000); 
- prueba.write(45);
+ prueba.write(65);
  delay(2000);
  
 
@@ -106,8 +80,7 @@ void loop() {
  
  delay(0);
   
- prueba.write(90);
+ prueba.write(125);
  delay(1000);
 }
  
-
