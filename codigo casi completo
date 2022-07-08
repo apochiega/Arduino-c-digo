@@ -68,11 +68,11 @@ void loop() {
  Serial.print(" Rojo");
  myservo.write(rojo);
  }
- else if ((r < 1.2) && (g > 1.3) && (b < 0.85)) {
+ else if ((r < 1.2) && (g > 1.2) && (b < 0.85)) {
  Serial.print(" Verde");
  myservo.write(verdes);
  }
- else if ((r < 1.05) && (g < 1.1) && (b > 1.12)) {
+ else if ((r < 1.07) && (g < 1.1) && (b > 0.9)) {
  Serial.print(" Celeste");
  myservo.write(celeste);
  }
@@ -81,15 +81,15 @@ void loop() {
  Serial.print(" Amarillo");
  myservo.write(amarillo);
  }
- else if ((r > 1.4) && (g < 1.0) && (b < 0.7)) {
+ else if ((r < 1.55) && (g < 1.0) && (b < 0.7)) {
  Serial.print(" Gris");
  myservo.write(gris);
  } 
- else if ((r < 1.4) && (g > 0.95) && (b < 0.7)) {
+ else if ((r < 1.4) && (g > 0.90) && (b < 0.7)) {
  Serial.print(" Blanco");
  myservo.write(blancos);
  } 
- else if ((r > 1.6) && (g < 1.1) && (b < 0.7)) {
+ else if ((r > 1.6 ) && (g < 1.1) && (b > 0.6)) {
  Serial.print(" Negro");
  myservo.write(negro);
  } 
